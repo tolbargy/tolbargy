@@ -24,5 +24,6 @@ jobs:
           echo 'hola mundo' >> index.html
           git status
           git add .
+          git checkout gh-pages
           git commit -m "Add changes"
           git push origin gh-pages

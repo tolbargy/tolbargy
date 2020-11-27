@@ -13,19 +13,22 @@ jobs:
       # Step 2
       - name: Install and Build
         run: |          
-          npm install
+          #npm install
           #node node_modules/@angular/cli/bin/ng build --prod          
       # Step 3    
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          touch index.html
+          echo 'hola mundo' >> index.html
           git status
           git add .
           git commit -m "Add changes"
+          git push origin master
       # Step 4    
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.TOKEN_PERSONAL }}
-          branch: gh-pages
+      #- name: Push changes
+      #  uses: ad-m/github-push-action@master
+      #  with:
+      #    github_token: ${{ secrets.TOKEN_PERSONAL }}
+      #    branch: gh-pages

@@ -25,10 +25,4 @@ jobs:
           git status
           git add .
           git commit -m "Add changes"
-          git push origin master
-      # Step 4    
-      #- name: Push changes
-      #  uses: ad-m/github-push-action@master
-      #  with:
-      #    github_token: ${{ secrets.TOKEN_PERSONAL }}
-      #    branch: gh-pages
+          git push origin gh-pages

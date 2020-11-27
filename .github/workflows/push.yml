@@ -22,8 +22,8 @@ jobs:
           git config --local user.name "GitHub Action"
           touch index.html
           echo 'hola mundo' >> index.html
-          git status
-          git add .
+          git status          
           git checkout gh-pages
+          git add .
           git commit -m "Add changes"
           git push origin gh-pages

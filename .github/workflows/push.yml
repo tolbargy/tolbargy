@@ -7,12 +7,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Step 1
       - name: Checkout 🛎️
         uses: actions/checkout@master
-
+      # Step 2
       - name: Install and Build
-        run: |
-          git branch
+        run: |          
           npm install
-          #node node_modules/@angular/cli/bin/ng build --prod
-          ls
+          #node node_modules/@angular/cli/bin/ng build --prod          
+      # Step 3    
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git status
+          git add .
+          git commit -m "Add changes"
+      # Step 4    
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN_PERSONAL }}
+          branch: gh-pages

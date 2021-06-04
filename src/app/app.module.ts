@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { InicioComponent } from './core/inicio/inicio.component';
+import { FuiRatingModule } from 'ngx-fomantic-ui';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InicioComponent } from './core/inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FuiRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
